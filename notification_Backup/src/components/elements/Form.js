@@ -5,12 +5,12 @@ const ImportFormForm = () => {
   return(
     <Form>
       <Form.Field>
-        <label>First Name: </label>
-        <input placeholder='First Name'/>
+        <label>Title </label>
+        <input placeholder='Title'/>
       </Form.Field>
       <Form.Field>
-        <label>Last Name:</label>
-        <input placeholder='Last Name'/>
+        <label>Message</label>
+        <input placeholder='Message'/>
       </Form.Field>
       <Form.Field label='Position:' control='select'>
         <option value='Top left'>Top left</option>
