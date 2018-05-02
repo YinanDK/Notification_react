@@ -5,19 +5,24 @@ import ImportMessage from '../elements/Message';
 class HomePage extends React.Component{
     constructor(props, context){
         super(props, context);
-    
+        this.state={
+
+        };
+
       }
-    
+
       render(){
         return(
           <div>
-            <ImportMessage/>
-            <div>
-              <h1>Notification generator</h1>
-              <ImportForm/>
-            </div>
+
+
+              <ImportForm
+
+              />
+              <ImportMessage/>
+
           </div>
-    
+
         );
       }
     }

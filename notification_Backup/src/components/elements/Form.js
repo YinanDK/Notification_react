@@ -1,18 +1,29 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import { Button, Checkbox, Form } from 'semantic-ui-react';
+import MessageImport from "./Form";
 
-const ImportFormForm = () => {
-  return(
-    <Form>
-      <Form.Field>
-        <label>Title </label>
-        <input placeholder='Title'/>
-      </Form.Field>
-      <Form.Field>
-        <label>Message</label>
-        <input placeholder='Message'/>
-      </Form.Field>
-      <Form.Field label='Position:' control='select'>
+class ImportFormForm extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = {};
+
+  }
+
+  render() {
+    return (
+      <div>
+        <Form style={{fontSize: 14, marginTop: 150}}>
+          <h1>Notification generator</h1>
+          <Form.Field>
+            <label>Title </label>
+            <input placeholder='Title'/>
+          </Form.Field>
+          <Form.Field>
+            <label>Message</label>
+            <input placeholder='Message'/>
+          </Form.Field>
+
+          <Form.Field label='Position:' control='select'>
         <option value='Top left'>Top left</option>
         <option value='Top right'>Top right</option>
         <option value='Top center'>Top center</option>
@@ -20,16 +31,17 @@ const ImportFormForm = () => {
         <option value='Bottom right'>Bottom right</option>
         <option value='Bottom center'>Bottom center</option>
       </Form.Field>
-      <Form.Field label='Level:' control='select'>
-        <option value='Positive'>Positive</option>
-        <option value='Negative'>Negative</option>
-        <option value='Warning'>Warning</option>
-      </Form.Field>
-    <Button type='submit'>Notify!</Button>
-  </Form>
-  );
-
-};
+          <Form.Field label='Level:' control='select'>
+            <option value='Positive'>Positive</option>
+            <option value='Negative'>Negative</option>
+            <option value='Warning'>Warning</option>
+          </Form.Field>
+          <Button type='submit'>Notify!</Button>
+        </Form>
+      </div>
+    );
+  }
+}
 
 export default ImportFormForm;
 
