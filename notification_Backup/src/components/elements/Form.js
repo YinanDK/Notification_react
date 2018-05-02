@@ -5,9 +5,12 @@ import MessageImport from "./Form";
 class ImportFormForm extends React.Component {
   constructor(props, context) {
     super(props, context);
-    this.state = {};
+    this.state = {
+
+    };
 
   }
+
 
   render() {
     return (
@@ -16,11 +19,18 @@ class ImportFormForm extends React.Component {
           <h1>Notification generator</h1>
           <Form.Field>
             <label>Title </label>
-            <input placeholder='Title'/>
+            <input placeholder='Title'
+                   value = {this.props.header}
+                   onChange={this.props.titleChange}
+            />
           </Form.Field>
           <Form.Field>
             <label>Message</label>
-            <input placeholder='Message'/>
+            <input placeholder='Message'
+                   value = {this.props.content}
+                   onChange={this.props.contentChange}
+
+            />
           </Form.Field>
 
           <Form.Field label='Position:' control='select'>
@@ -36,7 +46,11 @@ class ImportFormForm extends React.Component {
             <option value='Negative'>Negative</option>
             <option value='Warning'>Warning</option>
           </Form.Field>
-          <Button type='submit'>Notify!</Button>
+          <Button type='submit'
+                  onSave={this.props.onSave}
+          >
+            Notify!
+          </Button>
         </Form>
       </div>
     );

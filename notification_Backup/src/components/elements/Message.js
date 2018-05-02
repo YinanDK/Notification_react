@@ -5,17 +5,15 @@ import styles from './Message.css';
 class MessageImport extends React.Component {
   constructor(props, context){
     super(props, context);
-    this.state = {
-      visible: true,
-      header: 'Title',
-      content:'There is the notification content'
 
+    this.state = {
+        visible:true
     };
     this.handleDismiss = this.handleDismiss.bind(this);
   }
 
   handleDismiss(){
-    this.setState({ visible: false });
+    this.setState({ visible:false});
 
     setTimeout(() => {
       this.setState({ visible: true });
@@ -30,8 +28,8 @@ class MessageImport extends React.Component {
             warning
             size='huge'
             onDismiss={this.handleDismiss}
-            header={this.state.header}
-            content={this.state.content}
+            header={this.props.header}
+            content={this.props.content}
           />
         </div>
       );
@@ -50,7 +48,8 @@ class MessageImport extends React.Component {
 
 MessageImport.propTypes = {
 
-  type: PropTypes.string
+  header: PropTypes.string,
+  content: PropTypes.string
 
 };
 
